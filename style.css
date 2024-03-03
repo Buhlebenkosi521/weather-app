@@ -1,0 +1,32 @@
+body{
+    background-color: azure;
+}
+#weather-details{
+    background-color: blanchedalmond;
+    width: 90%;
+    max-width: 470px;
+    margin: 100px auto 0;
+    border-radius: 20px;
+    padding: 40px  35px;
+}
+.search-form{
+    margin-top: 10px;
+    align-items: flex-start;
+}
+#search-input{
+border: none;
+background-color: azure;
+padding: 10px 25px;
+border-radius: 30px; 
+margin-right: 3px;
+}
+#button{
+    background-color: rgb(194, 243, 243);
+    color: white;
+    border-radius: 60px;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    
+    
+}
