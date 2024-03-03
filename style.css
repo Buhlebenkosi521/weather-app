@@ -16,7 +16,7 @@ h1{
     margin-top: 10px;
     align-items: flex-start;
 }
-#search-input{
+#searchInput{
 border: none;
 background-color: azure;
 padding: 10px 25px;
@@ -25,7 +25,7 @@ margin-right: 3px;
 }
 #button{
     background-color: rgb(194, 243, 243);
-    color: white;
+    color: black;
     border-radius: 60px;
     border: none;
     padding: 10px 15px;
