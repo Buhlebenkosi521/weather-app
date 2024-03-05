@@ -3,10 +3,17 @@ function refreshWeather(response) {
     let cityElement = document.querySelector("#city");
     let temperatureElement = document.querySelector("#temperature");
     let temperature = response.data.main.temp;
+    let humidity = document.querySelector(".humidity");
+    let speed = document.querySelector(".speed");
 
 
     cityElement.innerHTML = response.data.name;
     temperatureElement.innerHTML = Math.round(response.data.main.temp) + "°c";
+
+
+
+
+
 }
 
 function searchCity(city) {
@@ -23,4 +30,4 @@ searchCity(searchInput.value);
 }
 button.addEventListener("click", handleSearchSubmit);
 
-searchCity();
+searchCity("Pretoria");
