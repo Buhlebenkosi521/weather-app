@@ -9,7 +9,7 @@ function refreshWeather(response) {
 
     cityElement.innerHTML = response.data.name;
     temperatureElement.innerHTML = Math.round(response.data.main.temp) + "°c";
-humidity.innerHTML = response.data.main.humidity = + "%";
+humidity.innerHTML = response.data.main.humidity + "%";
 speed.innerHTML = Math.round(response.data.wind.speed) + "km/h";
 
 
@@ -20,6 +20,7 @@ speed.innerHTML = Math.round(response.data.wind.speed) + "km/h";
 function searchCity(city) {
     let apiKey = "cec85bc06c0dfd484345cb4a3249819e";
     let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+    console.log(apiUrl);
     axios.get(apiUrl).then(refreshWeather);
 }
 
