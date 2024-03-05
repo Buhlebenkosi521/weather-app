@@ -9,7 +9,8 @@ function refreshWeather(response) {
 
     cityElement.innerHTML = response.data.name;
     temperatureElement.innerHTML = Math.round(response.data.main.temp) + "°c";
-
+humidity.innerHTML = response.data.main.humidity = + "%";
+speed.innerHTML = Math.round(response.data.wind.speed) + "km/h";
 
 
 
