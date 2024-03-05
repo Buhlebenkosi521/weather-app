@@ -6,14 +6,16 @@ function refreshWeather(response) {
     let humidity = document.querySelector(".humidity");
     let speed = document.querySelector(".speed");
     let description = document.querySelector("#description");
-    let icon =document.querySelector("#weatherIcon");
+    let ms = Date.parse("Monday 10");
+let timeElement = document.querySelector("#time");
 
     cityElement.innerHTML = response.data.name;
     temperatureElement.innerHTML = Math.round(response.data.main.temp) + "°c";
 humidity.innerHTML = response.data.main.humidity + "%";
 speed.innerHTML = Math.round(response.data.wind.speed) + "km/h";
 description.innerHTML = response.data.weather[0].description;
-icon.innerHTML = response.data.main.icon;
+timeElement.innerHTML = ms;
+
 
 
 
