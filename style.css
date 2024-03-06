@@ -2,15 +2,16 @@ body{
     background-color: azure;
 }
 #weather-details{
-    background-color: blanchedalmond;
+    background-color: rgb(168, 190, 169);
     width: 90%;
     max-width: 470px;
-    margin: 100px auto 0;
+    margin: 100px auto 100px auto;
     border-radius: 20px;
-    padding: 40px  35px;
+    padding: 100px 80px 100px 80px;
 }
 h1{
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family: Arial Black, Helvetica, sans-serif;
+    font-weight: 700;
     margin-top: 50px;
 }
 .search-form{
@@ -39,18 +40,23 @@ margin-right: 3px;
     margin-bottom: -3px;
 }
 #details{
-    margin-top: 80px;
+    margin-bottom: 10px;
+}
+#icon{
+    width: 40px;
+    margin-top: -70px;
+    
 }
 #temperature{
-    font-family: Georgia, 'Times New Roman', Times, serif ;
+     font-family: Arial, Helvetica, sans-serif;
     font-weight: 900;
     font-size: 70px;
-    margin-bottom: 50px;
-margin: 30px auto 300px auto;
+margin-top: -70px;
 }
 footer{
-    margin-top: 30px;
+    margin-top: -150px;
     font-size: 12px;
+    text-align: center;
 }
 #icon{
     font-size: 40px;
