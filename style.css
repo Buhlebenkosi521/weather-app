@@ -4,10 +4,10 @@ body{
 #weather-details{
     background-color: rgb(168, 190, 169);
     width: 100%;
-    max-width: 600px;
-    margin: 100px auto 100px auto;
+    max-width: 550px;
+    margin: 50px auto 50px auto;
     border-radius: 20px;
-    padding: 250px 100px 250px 100px;
+    padding: 80px 90px 200px 90px;
 }
 h1{
     font-family: Arial Black, Helvetica, sans-serif;
@@ -22,8 +22,10 @@ h1{
 border: none;
 background-color: azure;
 padding: 10px 25px;
-border-radius: 30px; 
-margin-right: 3px;
+border-radius: 30px;
+width: 300px; 
+margin-right: 1px;
+margin-top: -60px;
 }
 #button{
     background-color: rgb(194, 243, 243);
@@ -32,6 +34,9 @@ margin-right: 3px;
     border: none;
     padding: 10px 15px;
     cursor: pointer;  
+    width: 100px;
+    position: relative;
+    margin-bottom: 100px;
 }
 .weather-info{
     display: flex;
@@ -55,7 +60,7 @@ margin-top: -70px;
 
 }
 footer{
-    margin-top: -150px;
+    margin-top: -80px;
     font-size: 12px;
     text-align: center;
 }
