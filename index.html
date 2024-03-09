@@ -8,7 +8,7 @@
     <title>Weather app</title>
 </head>
 <body>
-    <div id="weather-details">
+    <div class="weather-details">
     <header>
         <div class="search-form">
             <input type="text" id="searchInput" placeholder="Enter a city.." required>
@@ -16,7 +16,7 @@
         </div>
     </header>
     <h1 id="city"></h1>
-    <div class="weather-info">
+    <div id="weather-info">
         <p id="details">
        <span id="time">Monday 12:00</span> <span id="description"></span> </br>
         Humidity:<strong class="humidity">%</strong> 
@@ -24,8 +24,9 @@
         </p>
       <p id="icon"></p>
       <p id="temperature">°c</p>
-       </div>
-    </div>
+      </div>
+
+    <div class="column" id="forecast"></div>
 <footer>
     Coded by 
     <a href="https://github.com/Buhlebenkosi521">Buhlebenkosi Jacqueline Bhebhe </a>open sourced
@@ -33,6 +34,7 @@
     <a href="https://buhle-jackie-2024.netlify.app"> hosted on Netlify</a>.
     
 </footer>
+</div>
 </div>
 <script src="index.js">
 
