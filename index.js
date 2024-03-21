@@ -16,7 +16,8 @@ function refreshWeather(response) {
   speed.innerHTML = Math.round(response.data.wind.speed) + "km/h";
   description.innerHTML = response.data.weather[0].description;
   time.innerHTML = formatDate(date);
-  icon.innerHTML = `<img src=https://openweathermap.org/img/wn/${iconCode}@2x.png class="weatherIcon"/>`;
+  iconElement.innerHTML = `<img src="http://openweathermap.org/img/wn/${iconCode}@2x.png" class="weatherIcon"/>`;
+  getForecast(response.data.name);
 }
 
 function formatDate(date) {
@@ -50,32 +51,48 @@ function handleSearchSubmit(event) {
   let button = document.querySelector("#button");
   searchCity(searchInput.value);
 }
-function getForecast() {
-  let apiKey = "cec85bc06c0dfd484345cb4a3249819e";
+
+function formatDay(dt) {
+  let date = new Date(dt * 6000);
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+  return days[date.getDay()];
 }
 
-function displayForecast() {
-  let days = ["Wed", "Thu", "Fri", "Sat", "Sun"];
+function getForecast(city) {
+  let apiKey = "cec85bc06c0dfd484345cb4a3249819e";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&units=metric&appid=${apiKey}`;
+  axios.get(apiUrl).then(displayForecast);
+}
+
+function displayForecast(response) {
+  console.log(response.data);
   let forecastHTML = "";
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `
+
+  response.data.list.forEach(function (day, index) {
+    if (index < 5) {
+      forecastHTML =
+        forecastHTML +
+        `
 <div class="weather-forecast" id="forecast">
 <div class="weather-forecast-item">
-<div class="weather-forecast-date">${day}</div>
-<div class="weather-forecast-icon">🌧️</div>
+<div class="forecast-date">${formatDay(day.dt)}</div>
+<img src="http://openweathermap.org/img/wn/${
+          day.weather[0].icon
+        }@2x.png" class="forecast-icon";
+        }" class="forecast-icon"/>
 <div class="weather-forecast-temperatures">
-<div class="forecast-temperature-max"><strong>20°</strong>  </div>
-<div class="forecast-temperature-min">14°</div>
+<div class="forecast-temperature-max"><strong>${Math.round(
+          day.main.temp_max
+        )}°</strong></div>
+<div class="forecast-temperature-min">${Math.round(day.main.temp_min)}°</div>
 </div>
 </div>
 `;
+    }
   });
-  let forecast = document.querySelector("#forecast");
-  forecast.innerHTML = forecastHTML;
+  let forecastElement = document.querySelector("#forecast");
+  forecastElement.innerHTML = forecastHTML;
 }
 button.addEventListener("click", handleSearchSubmit);
 
 searchCity("Pretoria");
-displayForecast();

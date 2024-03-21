@@ -47,21 +47,21 @@ h1 {
 }
 
 #icon {
-  width: 40px;
-  margin-top: -85px;
+  display: block;
+  width: 100px;
+  line-height: 24px;
+  margin-top: -80px;
 }
 #temperature {
   font-family: Arial, Helvetica, sans-serif;
   font-weight: 900;
   font-size: 70px;
+  line-height: 24px;
   margin-top: -50px;
 }
 footer {
   font-size: 10px;
   margin-top: 100px;
-}
-#icon {
-  font-size: 40px;
 }
 .humidity {
   color: red;
@@ -81,10 +81,14 @@ footer {
 }
 .weather-forecast {
   display: flex;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
   padding-left: 30px;
   padding-right: 30px;
   width: 100%;
   gap: 2rem;
+}
+.forecast-icon {
+  width: 50px;
 }
